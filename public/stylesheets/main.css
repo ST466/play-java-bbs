@@ -1,0 +1,321 @@
+body,
+html {
+    height: 100%;
+    margin: 0 auto;
+    letter-spacing: 2px;
+    font-size: 10px;
+    font-family:"Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
+
+}
+
+article {
+  overflow-x:hidden;
+}
+
+.parallax-bg {
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height:100vh;
+}
+
+bbs {
+  padding-top: 100px;
+}
+
+img {
+  max-width: 100%;
+}
+
+strong {
+ font-size:24px;
+}
+
+h2 {
+  border-bottom: 1px solid #441;
+  font-size: 24px;
+  width:100%;
+
+}
+
+.no-col-padding {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.navi * {
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+}
+
+div {
+  box-sizing: border-box;
+  color: #441;
+  font-size: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 2%;
+}
+
+.no-padding {
+  padding: 0;
+}
+
+.no-padding * {
+  padding: 0;
+}
+
+.left-align {
+  align-items: flex-start;
+  text-align:left;
+}
+
+#head-navi {
+  left:0;
+  top:0;
+  width: 100%;
+  z-index: 99;
+  position: fixed;
+  margin:0;
+  background-color:rgba(255,255,255,0.9);
+  padding-top:2px;
+  padding-bottom:2px;
+  height:60px;
+}
+
+#content-main {
+  left:0;
+  top:60px;
+  width: 100%;
+  position: fixed;
+  margin:0;
+  padding:0;
+}
+
+#foot-navi {
+  display:none;
+}
+
+.foot-margin {
+  display:none;
+}
+
+.parallax-bg {
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height:100vh;
+}
+
+.border_radius {
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+}
+
+.img-bg-01 {
+  background-image: url("../images/background.png");
+}
+
+.partition-row {
+  width: 100%;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.partition-row-end {
+  width: 100%;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.partition-col {
+  width: 100%;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.partition-col-end {
+  width: 100%;
+  flex-direction: column;
+  justify-content:flex-end;
+}
+
+.alpha-back {
+  background-color: rgba(255,255,255,0.8);
+}
+
+.delighter li { opacity: 0; transform: translatey(400%); transition: all .4s ease-out; }
+.delighter.started li { opacity: 1; transform: none; }
+
+ul {
+  list-style: none;
+}
+
+.navi ul {
+  flex-direction: row;
+  display: flex;
+  justify-content: flex-start;
+  padding: 2%;
+}
+
+.navi li{
+  -webkit-transform: skewX(150deg);
+  -moz-transform: skewX(150deg);
+  transform: skewX(150deg);
+  border-left: 1px solid #999;
+  height:28px;
+  min-width: 240px;
+}
+
+
+.navi li a{
+  display:block;
+  transform: skewX(-150deg);
+  height: 24px;
+  background-position: 5px 2px;
+  font-size: 18px;
+}
+
+.navi li:first-child{
+  border-left:none;
+}
+
+.navi li:last-child{
+  border-right:none;
+}
+
+.thread-summary{
+  border : 1px solid #330;
+  width : 80%;
+  margin : 12px;
+  font-size: 14px;
+  position: relative;
+}
+
+.thread-title a {
+  font-size: 36px;
+  text-decoration: none;
+}
+
+.divlink {
+  position: relative;
+}
+
+.divlink .link {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.thread-time {
+  text-align: right;
+  font-size: 14px;
+}
+
+.board-thread {
+  min-height: 300px;
+}
+
+.board-frame {
+  width: 80%;
+  margin: 30px;
+  padding: 0;
+}
+
+.board {
+  margin: 0;
+  padding: 0;
+}
+
+.board-head {
+  height: 30px;
+}
+
+.board-head div {
+  font-size: 14px;
+  color: #777;
+}
+
+.board-head .board-name {
+  font-weight: bold;
+  color: #394;
+}
+
+.board-body {
+  font-size: 16px;
+  color: #000;
+  text-align: left;
+}
+
+.standard-label {
+  font-size: 24px;
+}
+
+.standard-input {
+  font-size: 60%;
+  width: 60%;
+  height: 3vh;
+}
+
+.standard-textarea {
+  font-size: 20px;
+}
+
+.standard-button {
+  width: 20%;
+  height: 3vh;
+  font-size: 20px;
+}
+
+.standard-form {
+  padding:0 ;
+}
+
+.standard-form div {
+  padding: 3px;
+}
+
+.errors {
+    font-size: 18px;
+    color: #F22;
+    margin: 0;
+    padding: 0;
+}
+
+.error input{
+    border: 1px solid #F22;
+}
+
+.error textarea{
+    border: 1px solid #F22;
+}
+
+p{
+  font-size: 16px;
+}
+
+.standard-link a {
+  font-size: 20px;
+}
+
+.standard-link span {
+  font-size: 20px;
+  margin: 5px;
+  text-align: center;
+  min-width: 15px;
+}
+
+.standard-content {
+  width: 80%;
+  margin: 0;
+  padding: 0;
+}

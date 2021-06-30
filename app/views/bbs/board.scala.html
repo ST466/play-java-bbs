@@ -1,0 +1,93 @@
+@(thread: BulletinThread, boards: List[BulletinBoard], form: Form[BulletinBoard])(implicit request: Http.Request, messages: play.i18n.Messages)
+@implicitField = @{ helper.FieldConstructor(customFormConstructor.f) }
+
+@main(thread.getTitle()) {
+<div class="bbs board-all parallax-bg img-bg-01 partition-col">
+  <div class="partition-col">
+    <h2>@thread.getTitle()</h2>
+
+    <div class="board-thread board-frame partition-col alpha-back">
+      <div class = "partition-col">
+
+        <div class = "board partition-col">
+          <div class = "board-head partition-row">
+            <div>
+              スレッドID: @thread.getId()
+            </div>
+            <div class = "board-name">
+              @if(thread.getName() == null || thread.getName().equals("")) {
+              名無しさん
+              } else {
+              @thread.getName()
+              }
+            </div>
+            <div>
+              ID: @thread.getUserCode()
+            </div>
+            <div>
+              @thread.getCreatedAtWithFormat()
+            </div>
+          </div>
+          <div class = "partition-row">
+            <div class = "board-body partition-row">
+              @Html(thread.getBody())
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="board-frame partition-col">
+
+      <div class = "alpha-back partition-col">
+        @if(boards.length == 0) {
+        <p>
+            コメントはありません。
+        </p>
+        }
+        @for(board <- boards) {
+        <div class = "board partition-col">
+          <div class = "board-head partition-row">
+            <div>
+              @board.getId()
+            </div>
+            <div class = "board-name">
+              @if(board.getName() == null || board.getName().equals("")) {
+                名無しさん
+              } else {
+                @board.getName()
+              }
+            </div>
+            <div>
+              ID: @board.getUserCode()
+            </div>
+            <div>
+              @board.getCreatedAtWithFormat()
+            </div>
+          </div>
+          <div class = "partition-row">
+            <div class = "board-body">
+              @Html(board.getBody())
+            </div>
+          </div>
+        </div>
+        }
+      </div>
+      <div class="partition-col">
+        <h2>コメントする</h2>
+
+        <div class = "thread-form">
+          @helper.form(action = routes.BBS.postBoard(thread.getId())) {
+          @helper.CSRF.formField
+          @helper.inputText(form("name"), 'id -> "form-thread-name", 'class -> "standard-input", 'size -> 30, '_label -> "名前")
+          @helper.textarea(form("body"), 'id -> "form-thread-body", 'class -> "standard-textarea",'rows -> 10, 'cols -> 128, '_label -> "コメント")
+          <input class = "standard-button" type = "submit" value = "投稿" />
+          }
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+}

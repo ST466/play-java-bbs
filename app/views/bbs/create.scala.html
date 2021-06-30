@@ -1,0 +1,21 @@
+@(form: Form[BulletinThread])(implicit request: Http.Request, messages: play.i18n.Messages)
+@implicitField = @{ helper.FieldConstructor(customFormConstructor.f) }
+
+@main("新規スレッド作成") {
+<div class="bbs parallax-bg img-bg-01  partition-col">
+  <div class="partition-col">
+    <h2>新規スレッド作成</h2>
+
+    <div class = "thread-form">
+      @helper.form(action = routes.BBS.postThread()) {
+      @helper.CSRF.formField
+      @helper.inputText(form("name"), 'id -> "form-thread-name", 'class -> "standard-input", 'size -> 30, '_label -> "投稿者名")
+      @helper.inputText(form("title"), 'id -> "form-thread-title", 'class -> "standard-input",'size -> 30, '_label -> "タイトル")
+      @helper.textarea(form("body"), 'id -> "form-thread-body", 'class -> "standard-textarea",'rows -> 30, 'cols -> 128, '_label -> "本文")
+      <input class = "standard-button" type = "submit" value = "投稿" />
+      }
+    </div>
+
+  </div>
+</div>
+}

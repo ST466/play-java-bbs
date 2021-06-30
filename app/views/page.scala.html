@@ -1,0 +1,28 @@
+@(currentPage: Int, lastPage: Int)
+
+<div class = "partition-row standard-link">
+    @for(i <- 1 to lastPage) {
+        @if(i > currentPage - 10 && i < currentPage + 10 || i == 1 || i == lastPage) {
+            @if(i > currentPage + 10) {
+                <span>
+                    ...
+                </span>
+            }
+            @if(i == currentPage) {
+                <span>
+                    @i
+                </span>
+            } else {
+                <span>
+                    <a href="?page=@i">@i</a>
+                </span>
+            }
+            @if(i < currentPage - 10) {
+                <span>
+                    ...
+                </span>
+            }
+        }
+
+    }
+</div>

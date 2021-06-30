@@ -1,0 +1,14 @@
+@(message: String)
+
+@main("エラー") {
+<div class="menu-page parallax-bg img-bg-01  partition-col">
+    <h1>
+        @if(message.isEmpty){
+            エラーが発生しました。
+        } else {
+            @message
+        }
+    </h1>
+    <a href="@{routes.BBS.index()}">掲示板トップ</a>
+</div>
+}

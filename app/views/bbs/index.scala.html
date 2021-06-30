@@ -1,0 +1,29 @@
+@(threads: List[BulletinThread], currentPage: Int, lastPage: Int)
+
+@main("掲示板サンプル") {
+<div class="bbs parallax-bg img-bg-01  partition-col">
+    <div class="partition-col">
+        <h2>掲示板</h2>
+        <div class = "standard-content partition-row">
+            <div class = "standard-link">
+                <a href = "@routes.BBS.newThread()">新規スレッド作成</a>
+            </div>
+        </div>
+        @for(thread <- threads) {
+        <div class="thread-summary divlink partition-col alpha-back">
+            <a class="link" href = "@{routes.BBS.thread(thread.getId())}"></a>
+            <div class="thread-title">
+                <a href = "@{routes.BBS.thread(thread.getId())}">@thread.getTitle() </a>
+            </div>
+            <div class="thread-time">
+                @thread.getUpdatedAtWithFormat()
+            </div>
+        </div>
+        }
+        <div class = "standard-content partition-col">
+            @page(currentPage, lastPage)
+        </div>
+
+    </div>
+</div>
+}

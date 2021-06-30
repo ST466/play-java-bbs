@@ -1,0 +1,14 @@
+@(elements: helper.FieldElements)
+
+<div class="standard-form partition-col @if(elements.hasErrors) {error}">
+    <div class="partition-row">
+      <label class="standard-label" for="@elements.id">@elements.label</label>
+    </div>
+    <div class="partition-row">
+        <span class="errors">@elements.errors.mkString(", ")</span>
+    </div>
+    <div class="input partition-row">
+        @elements.input
+    </div>
+
+</div>
